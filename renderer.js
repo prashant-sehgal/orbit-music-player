@@ -155,6 +155,14 @@ if (track) {
   track.addEventListener("input", function (event) {
     const trackTime = (event.target.value / 100) * music.duration;
     music.currentTime = trackTime;
+    track.value = event.target.value;
+    track.style.background = `linear-gradient(
+        to right,
+        var(--primary),
+        var(--mid-primary) ${event.target.value}%,
+        #ffffff 20%,
+        #ffffff
+      )`;
   });
 }
 
