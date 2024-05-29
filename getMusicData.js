@@ -68,7 +68,7 @@ async function extractAlbumArt(musicFilePath, outputDir) {
       console.log("No album art found in the music file.");
       return {
         file: musicFilePath,
-        img: "D:\\orbit\\img\\temp\\album-arts\\none.jpeg",
+        img: "D:\\orbit\\img\\thumbnail.jpg",
         title: musicFilePath.split("\\")[musicFilePath.split("\\").length - 1],
       };
     }
