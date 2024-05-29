@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  padding: 4px;
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  flex: 0.1;
+}
+
+.header #search input {
+  width: 600px;
+  height: 40px;
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  padding: 6px;
+  outline: none;
+  background-color: whitesmoke;
+}
+
+.header #search input:focus {
+  background-color: white;
+}
+
+:root {
+  --primary: #df004a;
+  /* --primary: #fa2a66; */
+  --mid-primary: #ff4152;
+}
+
+.music-list {
+  flex: 0.8;
+  overflow-y: scroll;
+}
+
+.music-list-element {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  opacity: 0.8;
+  margin-top: 10px;
+  color: white;
+}
+.active-music-list-element {
+  color: #df004a;
+  opacity: 1;
+}
+
+.music-list-element:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.music-list-element img {
+  width: 30px;
+}
+
+.music-list-element .title {
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+/* Custom Scrollbar Styles for Chromium-based browsers */
+
+/* The entire scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* The scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* The scrollbar thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #535353; /* Slightly darker color for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid #1a1a1a; /* Border to add some spacing around the thumb */
+}
+
+/* The scrollbar thumb when being hovered over */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0a0a0a; /* Even darker color for the thumb when hovered */
+}
+
+/* The scrollbar corner when both horizontal and vertical scrollbars are present */
+::-webkit-scrollbar-corner {
+  background-color: #1a1a1a; /* Corner color */
+}
+
+/* player styles */
+.player {
+  background-color: #1a1a1a;
+  box-shadow: 0px -1px 0px 0px #df004a;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.player .song-title-container {
+  display: flex;
+  color: white;
+  flex: 0.3;
+  align-items: center;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.player .song-title-container .song-title {
+  margin-left: 10px;
+}
+
+.player .song-title-container img {
+  width: 40px;
+}
+
+.player .song-contols {
+  flex: 0.4;
+}
+
+.player .container {
+  flex: 0.3;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.btn-action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+}
+
+.btn-action:hover {
+  opacity: 1;
+}
+
+.btn-action span {
+  color: white;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* timeline */
+.timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.timeline .time {
+  font-size: 12px;
+  width: 20px;
+}
+
+.track {
+  width: 75%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--mid-primary) 0%,
+    #ffffff 20%,
+    #ffffff
+  );
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.track::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(to left, var(--primary), var(--mid-primary));
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.track::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(to left, var(--primary), var(--mid-primary));
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active-toggle-mode span {
+  color: #df004a;
+}
+
+/* music folder styles */
+.folders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.folders .container {
+  background-color: #8d8d8d;
+  border: 1px solid black;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.delete-btn:hover {
+  background-color: rgb(153, 51, 51);
+}
+
+.add-btn:hover {
+  background-color: rgb(22, 58, 175);
+}
